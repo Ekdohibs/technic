@@ -43,6 +43,7 @@ dofile(modpath.."/battery_box_mv.lua")
 dofile(modpath.."/solar_panel_mv.lua")
 dofile(modpath.."/electric_furnace_mv.lua")
 dofile(modpath.."/alloy_furnace_mv.lua")
+dofile(modpath.."/forcefield.lua")
 
 --Tools
 if enable_mining_drill==true then dofile(modpath.."/mining_drill.lua") end
@@ -76,7 +77,6 @@ end
 function hacky_swap_node(pos,name)
 	local node = minetest.env:get_node(pos)
 	local meta = minetest.env:get_meta(pos)
-	local meta0 = meta:to_table()
 	if node.name == name then
 		return nil
 	end
